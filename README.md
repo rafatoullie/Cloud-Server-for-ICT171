@@ -11,6 +11,8 @@ Thus, for our first step we must install Wordpress, but before we install Wordpr
 
 - APACHE
 First we need to update the package index
-`sudo apt update`
+```
+sudo apt update
+```
 Then we can install Apache
 `sudo apt install apache2`
