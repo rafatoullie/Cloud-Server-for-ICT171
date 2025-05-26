@@ -7,16 +7,73 @@ I have chosen to make a blog page using wordpress for my project, I will also be
 # Installing Wordpress
 Since we have been asked to build this on top of the server we launched for the previous assignment. I will skip documenting the process of starting the web server as this has been assumed to be complete already. The type of instance I am using is a t2.micro instance
 from AWS EC2.
-Thus, for our first step we must install Wordpress, but before we install Wordpress we need to install a few prerequisites such as Apache, MySQL to set up a database and PHP since Wordpress is built using it.
+Thus, for our first step we must install Wordpress, but before we install Wordpress we need to install a few prerequisites. Namely MySQL to set up a database and PHP since Wordpress is built using it.
 
-- APACHE
+- MySQL  
 
-First we need to update the package index
+We can install MySQL by using the following code
 ```
-sudo apt update
+sudo apt install mysql-server
 ```
-Then we can install Apache
+Then we have to follow a few prompts to secure the MySQL server, such as setting a root password and removing anonymous users.
 
 ```
-sudo apt install apache2
+sudo mysql_secure_installation
 ```
+Then we can log into mySQL with the following code
+
+```
+sudo mysql -u root -p
+```
+Then we need to create a new user and database for Wordpress. We do this by typing in the following code sequentially
+
+```
+CREATE DATABASE wordpress;
+CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+```
+replace 'password' with any password of choice.
+
+
+- PHP
+
+To install PHP and all required extensions we use this line of code
+
+```
+sudo apt install php libapache2-mod-php php-mysql php-xml php-mbstring php-curl php-zip
+```
+and then we need to restart apache to load PHP
+
+```
+sudo systemctl restart apache2
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
