@@ -51,10 +51,9 @@ and then we need to restart apache to load PHP
 sudo systemctl restart apache2
 ```
 
+- Wordpress
 
-
-
-
+Now that we have installed all prerequisites we can install Wordpress
 
 
 
