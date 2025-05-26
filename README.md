@@ -10,6 +10,7 @@ from AWS EC2.
 Thus, for our first step we must install Wordpress, but before we install Wordpress we need to install a few prerequisites such as Apache, MySQL to set up a database and PHP since Wordpress is built using it.
 
 - APACHE\
+
 First we need to update the package index
 ```
 sudo apt update
