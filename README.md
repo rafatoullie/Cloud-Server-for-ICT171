@@ -9,7 +9,7 @@ Since we have been asked to build this on top of the server we launched for the 
 from AWS EC2.
 Thus, for our first step we must install Wordpress, but before we install Wordpress we need to install a few prerequisites such as Apache, MySQL to set up a database and PHP since Wordpress is built using it.
 
-- APACHE\
+- APACHE
 
 First we need to update the package index
 ```
