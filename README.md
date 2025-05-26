@@ -15,4 +15,7 @@ First we need to update the package index
 sudo apt update
 ```
 Then we can install Apache
-`sudo apt install apache2`
+
+```
+sudo apt install apache2
+```
