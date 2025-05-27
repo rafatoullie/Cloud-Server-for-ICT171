@@ -1,6 +1,8 @@
 # Overview
 I have chosen to make a blog page using wordpress for my project, I will also be including a script that backs up the data for my page everyday.
 
+Following the instructions on our assignment doocument, I will try to write up my documentation in a way that would make it easy to replicate, I am taking inspiration from how our lab work was written.
+
 
 
 
@@ -8,6 +10,19 @@ I have chosen to make a blog page using wordpress for my project, I will also be
 Since we have been asked to build this on top of the server we launched for the previous assignment. I will skip documenting the process of starting the web server as this has been assumed to be complete already. The type of instance I am using is a t2.micro instance
 from AWS EC2.
 Thus, for our first step we must install Wordpress, but before we install Wordpress we need to install a few prerequisites. Namely Apache2 which we already have installed, MySQL to set up a database and PHP since Wordpress is built using it.
+
+- SSH
+
+Firstly we will need to ssh into our AWS EC2 instance using our downloaded key.
+We must first change use this code on our key file
+```
+chmod 0400 key.pem
+```
+then we must type this in to connect to our instance (assuming we are in the directory with our key file)
+```
+sudo ssh -i key.pem ubuntu@blog.rafataws.com
+```
+This should connect us to our instance.
 
 - MySQL  
 
