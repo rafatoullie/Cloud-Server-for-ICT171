@@ -53,7 +53,25 @@ sudo systemctl restart apache2
 
 - Wordpress
 
-Now that we have installed all prerequisites we can install Wordpress
+Now that we have installed all prerequisites we can install Wordpress, we can use wget to install it
+
+```
+wget https://wordpress.org/latest.tar.gz
+```
+
+then we can extract and move the files to the web root
+```
+tar -xvf latest.tar.gz
+```
+```
+sudo mv wordpress /var/www/html/wordpress
+```
+then set permissions
+```
+sudo chown -R www-data:www-data /var/www/html/wordpress
+sudo chmod -R 755 /var/www/html/wordpress
+```
+
 
 
 
