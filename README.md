@@ -141,12 +141,13 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --apache
 ```
-after certification for my domain name was successful I ran a code to renew it automatically post expiry
-```
-sudo certbot renew --dry-run
-```
 
 
+# EDIT
+
+After following the steps to obtain a digital certificate, my website no longer worked. I spent an entire day trying to troubleshoot this issue but unfortunately nothing worked. After this incident I saw no other
+solution except redoing the entire process. Fortunately this documentation helped streamline the process. The only thing that I did differently was acquire a digital certificate right after installing apache for the new
+instance. I used the same domain name with the same hosted zone, I just edited out the previous ip address with the updated one.
 
 
 
