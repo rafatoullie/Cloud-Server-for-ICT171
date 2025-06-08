@@ -148,8 +148,10 @@ sudo certbot --apache
 After following the steps to obtain a digital certificate, my website no longer worked. It did not load in any platform and I had no way to access it, not even through my wordpress admin panel.
 I spent an entire day trying to troubleshoot this issue but unfortunately nothing worked. After this incident I had no other option except redoing the entire process. Fortunately, this documentation helped
 streamline the process. The only thing that I did differently was acquiring a digital certificate right after installing apache for the  new instance. I used the same domain name with the same hosted zone,
-I only edited out the previous ip address with the updated one.
-
+I only edited out the previous ip address with the updated one. The new ip is
+```
+3.27.167.100
+```
 
 
 
