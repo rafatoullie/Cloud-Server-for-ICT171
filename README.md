@@ -127,7 +127,7 @@ After installing wordpress took me to the dashboard where I was free to build mm
 It wasnt made exclusively for blogging so I had to go to the customiser tab and edit out alot of fluff that i had no need of, including video links and team introductions. I repurposed the website to be as minimal as possible and edited the colours to match the
 homepage image I had picked.
 
-I plan on using this website long term, but for now i decided on writing up a few sample posts using ChatGPT. These are only placeholders I am using till I write up an actual post, I am only using AI here to make the site look full of content for now.
+I plan on using this website long term, but for now I decided on writing up a few sample posts using ChatGPT. These are only placeholders I am using till I write up an actual post, I am only using AI here to make the site look full of content for now.
 After testing the website from both my laptop and my phone, and also making other people check the link to see if anything was wrong with it, The site was complete.
 
 For my next step I wanted to make sure my site was secure as it was still using http/ instead of https/. I looked into the contents of previous lab work from a few weeks prior to get a digital certificate from LetsEncrypt
