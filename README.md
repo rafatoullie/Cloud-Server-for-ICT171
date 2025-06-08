@@ -43,9 +43,9 @@ sudo mysql -u root -p
 Then we need to create a new user and database for Wordpress. We do this by typing in the following code sequentially
 
 ```
-CREATE DATABASE wordpress;
+CREATE DATABASE wpdb DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';
+GRANT ALL PRIVILEGES ON wpdb.* TO 'wpuser'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 
