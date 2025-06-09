@@ -218,7 +218,8 @@ Here we paste the following script which will run this backup script every night
 This assignment took me longer than expected as I made the mistake of not securing my server beforehand, however this turned out to be a net positive as it resulted in me redoing the entire process by following the
 instructions I wrote in this document. It allowed me to iron out mistakes and update a few lines. 
 
-My blog site is not fully functional with an automated backup script. I created it using Wordpress and I got my domain name from Route53.
+My blog site is not fully functional with an automated backup script. I created it using Wordpress and I got my domain name from Route53.  
+domain: blog.rafataws.com
 
 
 
