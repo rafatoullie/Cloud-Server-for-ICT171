@@ -1,4 +1,7 @@
 # Overview
+Name: Rafat Rahman
+Student Number: 35673718
+
 I have chosen to make a blog page using wordpress for my project, I will also be including a script that backs up the data for my page everyday.
 
 Following the instructions on our assignment doocument, I will try to write up my documentation in a way that would make it easy to replicate, I am taking inspiration from how our lab work was written.
