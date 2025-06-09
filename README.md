@@ -153,6 +153,69 @@ I only edited out the previous ip address with the updated one. The new ip is
 3.27.167.100
 ```
 
+While I was redoing my website I noticed that my wordpress website could only be accessed via the ip address and not the domain name. This was caused by the Apache virtual host config pointing to the root folder 
+in var/www/html, but my wordpress files were located in a sub-folder inside that root folder. To fix this, I moved the contents into the root folder and edited my general settings in wordpress to use my domain name
+instead.
+
+```
+sudo mv /var/www/html/wordpress/* /var/www/html/
+sudo mv /var/www/html/wordpress/.* /var/www/html/ 2>/dev/null
+sudo rm -rf /var/www/html/wordpress
+sudo rm /var/www/html/index.html
+sudo systemctl reload apache2
+```
+
+# SCRIPT
+
+For the scripting component, I decided to write a backup script that will run everyday to ensure my data is safe incase any potential issue arises. To do this we need to first create a directory to store our backups
+```
+sudo mkdir -p /home/ubuntu/backups
+sudo chown ubuntu:ubuntu /home/ubuntu/backups
+```
+after which we can create the script
+```
+nano /home/ubuntu/backup_wordpress.sh
+```
+then we have to type in the script.
+```
+#!/bin/bash
+
+DATE=$(date +'%Y-%m-%d_%H-%M-%S')
+BACKUP_DIR="/home/ubuntu/backups"
+WEB_DIR="/var/www/html"
+DB_NAME="wpdb"
+DB_USER="wpuser"
+DB_PASS="(my password)"
+
+mysqldump -u $DB_USER -p$DB_PASS $DB_NAME > $BACKUP_DIR/dbbackup$DATE.sql
+tar -czf $BACKUP_DIR/sitebackup$DATE.tar.gz $WEB_DIR
+
+find $BACKUP_DIR -type f -mtime +7 -name ".tar.gz" -exec rm {} ;
+find $BACKUP_DIR -type f -mtime +7 -name ".sql" -exec rm {} ;
+
+echo "Backup completed on $DATE"
+```
+I have left out my password in the script I have provided above.
+After this we have to make this script executable using
+```
+chmod +x /home/ubuntu/backup_wordpress.sh
+```
+Then, after checking if the script works properly, we can use the following lines to automate this.
+```
+crontab -e
+```
+Here we paste the following script which will run this backup script every night at 3:00 AM and all output will be appended to the backup log file.
+```
+0 3 * * * /home/ubuntu/backup_wordpress.sh >> /home/ubuntu/backup_log.txt 2>&1
+```
+
+
+# Conclusion
+
+This assignment took me longer than expected as I made the mistake of not securing my server beforehand, however this turned out to be a net positive as it resulted in me redoing the entire process by following the
+instructions I wrote in this document. It allowed me to iron out mistakes and update a few lines. 
+
+My blog site is not fully functional with an automated backup script. I created it using Wordpress and I got my domain name from Route53.
 
 
 
